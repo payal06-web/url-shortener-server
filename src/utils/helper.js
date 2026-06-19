@@ -13,7 +13,7 @@ export const signToken = (payload) =>{
 export const verifyToken = (token) => {
   try {
     const decoded = jsonwebtoken.verify(token, process.env.JWT_SECRET);
-    return decoded.id; // ✅ clean
+    return decoded.id; 
   } catch (error) {
     throw error;
   }

@@ -16,8 +16,8 @@ dotenv.config()
 const app = express()
 
 app.use(cors({
-    origin: 'http://localhost:5173', // your React app
-    credentials: true // 👈 this allows cookies to be sent
+    origin: 'http://localhost:5173', 
+    credentials: true 
 }));
 
 app.use(express.json())
@@ -32,10 +32,8 @@ app.get("/",(req, res)=>{
 app.use("/api/user",user_routes)
 app.use("/api/auth",auth_routes)
 
-// post (jisse short url create krenge)
 app.use("/api/short",short_url)
 
-// get- redirection (ye direct node mein jayega)
 app.get("/:id",redirectFromShortUrl)
 
 app.use(errorHandler)
