@@ -16,7 +16,8 @@ dotenv.config()
 const app = express()
 
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: ["http://localhost:5173", 
+            "https://url-shortener-22vg.onrender.com"],
     credentials: true 
 }));
 
@@ -42,7 +43,7 @@ const startServer = async () => {
     try {
         await connectDB();
         app.listen(5000,"0.0.0.0", () => {
-            console.log("Server running on http://localhost:5000");
+            console.log("Server running");
         });
     } catch (error) {
         console.error("DB connection failed", error);
